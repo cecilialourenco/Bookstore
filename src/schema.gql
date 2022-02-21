@@ -1,0 +1,41 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Book {
+  _id: String!
+  author: String!
+  title: String!
+  year: String!
+}
+
+input CreateBookInput {
+  author: String!
+  title: String!
+  year: Float!
+}
+
+input ListBookInput {
+  _id: String
+  author: String
+  title: String
+  year: Float
+}
+
+type Mutation {
+  createBook(payload: CreateBookInput!): Book!
+  deleteBook(_id: String!): Book!
+  updateBook(payload: UpdateBookInput!): Book!
+}
+
+type Query {
+  book(_id: String!): Book!
+  books(filters: ListBookInput): Book!
+}
+
+input UpdateBookInput {
+  _id: String!
+  author: String
+  title: String
+  year: Float
+}

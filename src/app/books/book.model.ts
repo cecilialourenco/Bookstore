@@ -16,7 +16,7 @@ export class Book {
   @Prop()
   author: string;
 
-  @Field(() => String)
+  @Field(() => Number)
   @Prop()
   year: number;
 }

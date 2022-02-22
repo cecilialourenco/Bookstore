@@ -9,8 +9,6 @@ import { CreateBookInput, ListBookInput, UpdateBookInput } from './book.inputs';
 export class BookResolver {
   constructor(private bookService: BookService) {}
 
-
-
   @Query(() => Book)
   async book(
     @Args('_id', {type: () => String }) _id: MongooseSchema.Types.ObjectId,
@@ -18,11 +16,11 @@ export class BookResolver {
     return this.bookService.getById(_id);
   }
 
-  @Query(() => Book)
+  @Query(() => [Book])
   async books(
-    @Args('filters', {nullable: true }) filters?: ListBookInput,
+    // @Args('filters', {nullable: true }) filters?: ListBookInput,
   ) {
-    return this.bookService.list(filters);
+    return this.bookService.list();
   }
 
   @Mutation(() => Book)

@@ -20,8 +20,8 @@ export class BookService {
     return this.bookModel.findById(_id).exec();
   }
 
-  list(filters: ListBookInput) {
-    return this.bookModel.find({ ...filters }).exec();
+  list() {
+    return this.bookModel.find().exec();
   }
 
   update(payload: UpdateBookInput) {

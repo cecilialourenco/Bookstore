@@ -11,7 +11,9 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/bookstore', { useNewUrlParser: true}),
+  MongooseModule.forRoot('mongodb://localhost:27017/bookstore', {
+    useNewUrlParser: true,
+  }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),

@@ -3,7 +3,7 @@ import { Schema as MongooseSchema } from 'mongoose';
 
 import { Book } from './book.model';
 import { BookService } from './book.service';
-import { CreateBookInput, ListBookInput, UpdateBookInput } from './book.inputs';
+import { CreateBookInput, UpdateBookInput } from './book.inputs';
 
 @Resolver(() => Book)
 export class BookResolver {
@@ -18,7 +18,6 @@ export class BookResolver {
 
   @Query(() => [Book])
   async books(
-    // @Args('filters', {nullable: true }) filters?: ListBookInput,
   ) {
     return this.bookService.list();
   }

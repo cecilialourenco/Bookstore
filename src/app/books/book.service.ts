@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model, Schema as MongooseSchema } from 'mongoose';
 
 import { Book, BookDocument } from './book.model';
-import { CreateBookInput, ListBookInput, UpdateBookInput } from './book.inputs';
+import { CreateBookInput, UpdateBookInput } from './book.inputs';
 
 @Injectable()
 export class BookService {
